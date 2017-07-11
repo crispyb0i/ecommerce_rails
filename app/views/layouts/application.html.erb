@@ -23,12 +23,12 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><%= link_to "Cart", carts_show_path(current_user) %> <span class="sr-only">(current)</span></li>
+              <li><%= link_to "Cart", carts_show_path(current_user) %> <li><%=current_item.length%> items | $<%=current_total%></li></li>
               <% if current_user %>
-              <li class="active"><%= link_to current_user.email, user_path(current_user) %> <span class="sr-only">(current)</span></li>
+              <li><%= link_to current_user.email, user_path(current_user) %> <span class="sr-only">(current)</span></li>
               <li><%= link_to "Sign out", destroy_user_session_path, :method =>'delete' %></li>
               <% else %>
               <li><%= link_to "Sign up", '/users/sign_up' %></li>

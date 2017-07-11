@@ -1,2 +1,5 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1 style="text-align:center"> <%= @user.email %> </h1>
+<br>
+<h4 style="text-align:center">Last signed in at: <%= @user.last_sign_in_at %></h4>
+<br>
+<h4 style="text-align:center">Admin status: <%= @user.admin %> </h4>

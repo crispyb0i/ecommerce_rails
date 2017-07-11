@@ -11,5 +11,6 @@ Product.destroy_all
 5.times do |index|
   Product.create!(name: Faker::Commerce.product_name,
                   price: Faker::Commerce.price,
-                  image: Faker::Fillmurray.image)
+                  image: Faker::Fillmurray.image,
+                  description: Faker::Simpsons.quote)
 end
