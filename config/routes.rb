@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   devise_for :users
   root :to => 'products#index'
 
+  resources :charges
   resources :users
   resources :order_items
   resource :cart, only: [:show]
