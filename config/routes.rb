@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   devise_for :users
   root :to => 'products#index'
 
+  patch '/accounts/:account_id/products/:id/favorite' => 'products#favorite', as: 'favorite'
+  patch '/accounts/:account_id/products/:id/unfavorite' => 'products#unfavorite', as: 'unfavorite'
+
   resources :charges
   resources :users
   resources :order_items

@@ -1,11 +1,15 @@
 class OrderItemsController < ApplicationController
   def create
+    if current_user
     @order = current_order
     @item = @order.order_items.new(item_params)
     @order.account_id = current_user.id
     @order.save
     session[:order_id] = @order.id
     redirect_to products_path
+    else
+    redirect_to user_session_path
+    end
   end
 
   def destroy
