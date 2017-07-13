@@ -3,3 +3,20 @@
 <h4 style="text-align:center">Last signed in at: <%= @user.last_sign_in_at %></h4>
 <br>
 <h4 style="text-align:center">Admin status: <%= @user.admin %> </h4>
+
+<div id="favorites_AJAX">
+  <% if @favorited_products != [] %>
+    <% @favorited_products.each do |product| %>
+    <%= product.name %>
+    <br>
+    <%= product.price %>
+    <br>
+    <img src="<%=product.image%>">
+    <br>
+    <%= button_to 'Unfavorite', unfavorite2_path(product), :method => :patch, :class => "btn btn-primary"%>
+    <hr>
+    <% end %>
+  <% else %>
+    <h3>You currently do not have any favorites</h3>
+  <% end %>
+</div>

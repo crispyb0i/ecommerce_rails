@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'carts/show'
+  # get 'carts/show'
 
   get 'order_items/create'
 
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   patch '/accounts/:account_id/products/:id/favorite' => 'products#favorite', as: 'favorite'
   patch '/accounts/:account_id/products/:id/unfavorite' => 'products#unfavorite', as: 'unfavorite'
+  patch '/users/:user_id/products/:id/unfavorite' => 'users#unfavorite2', as: 'unfavorite2'
 
   resources :charges
   resources :users

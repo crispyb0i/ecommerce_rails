@@ -1,0 +1,3 @@
+$("#delete_<%=@item.id%>").hide();
+$("#total").html("<p id='total'>Your Total: <%= number_to_currency current_order.total_price %></p>");
+$("#total_navbar").html("<li id='total_navbar'><%=current_item.length%> items | $<%=current_total%></li>");

@@ -26,7 +26,7 @@
               <li><a href="/">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to "Cart", carts_show_path(current_user) %> <li><%=current_item.length%> items | $<%=current_total%></li></li>
+              <li><%= link_to "Cart", cart_path(current_user) %> <li id="total_navbar"><%=current_item.length%> items | $<%=current_total%></li></li>
               <% if current_user %>
               <li><%= link_to current_user.email, user_path(current_user) %> <span class="sr-only">(current)</span></li>
               <li><%= link_to "Sign out", destroy_user_session_path, :method =>'delete' %></li>
